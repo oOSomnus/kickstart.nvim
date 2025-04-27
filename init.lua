@@ -239,6 +239,24 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
+  -- aerial for project structure
+  {
+    'stevearc/aerial.nvim',
+    event = { 'BufReadPost', 'BufNewFile' },
+    opts = {
+      backends = { 'lsp', 'treesitter', 'markdown' },
+      show_guides = true,
+      layout = {
+        resize_to_content = false,
+        default_direction = 'prefer_right',
+      },
+      filter_kind = false, -- 不做符号筛选
+    },
+    keys = {
+      { '<leader>cs', '<cmd>AerialToggle<CR>', desc = 'Aerial (Symbols)' },
+    },
+  },
+
   {
     'karb94/neoscroll.nvim',
     config = function()
