@@ -6,15 +6,15 @@ return {
     local mark = require 'harpoon.mark'
     local ui = require 'harpoon.ui'
 
-    -- 初始化 Harpoon（这里用默认配置）
+    -- init the default configurations
     harpoon.setup {}
 
-    -- 基础快捷键
+    -- basic shortcuts
     vim.keymap.set('n', '<leader>pa', mark.add_file, { desc = 'Harpoon 添加当前文件' })
     vim.keymap.set('n', '<leader>ph', ui.toggle_quick_menu, { desc = 'Harpoon 打开菜单' })
     vim.keymap.set('n', '<leader>pd', mark.rm_file, { desc = 'Harpoon 删除当前文件' })
 
-    -- 快速跳转到第 1-4 个 Harpoon 文件
+    -- jumping to 1-4 files shortcut
     vim.keymap.set('n', '<leader>p1', function()
       ui.nav_file(1)
     end, { desc = 'Harpoon 跳转到文件 1' })
