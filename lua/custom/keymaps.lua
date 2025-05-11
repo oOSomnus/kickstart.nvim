@@ -9,6 +9,12 @@ vim.keymap.set('i', '<C-k>', '<Down>', { desc = 'Insert mode move down' })
 vim.keymap.set('n', '<leader>e', ':Ex<CR>', { desc = 'Open file [e]xplorer' })
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { noremap = true, silent = true })
+
+vim.cmd [[
+onoremap j k
+onoremap k j
+]]
+
 local map = vim.keymap.set
 
 map('n', '<C-_>', function()
